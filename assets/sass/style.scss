@@ -1,0 +1,109 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-size: inherit;
+    margin: 0;
+    outline: none;
+}
+
+a,
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 1.6rem;
+    color: #201830;
+    margin: 0;
+    padding: 0;
+}
+
+// common styles
+
+$heading-common-font: (
+    lagre: 7rem,
+    medium: 4.2rem,
+    small: 2rem,
+);
+
+$heading-common-line-height: (
+    lagre: 1.14,
+    medium: 1.24,
+    small: 1.5,
+);
+$button-desc-common-font: (
+    lagre: 1.8rem,
+    medium: 1.6rem,
+    small: 1.4rem,
+);
+
+$button-desc-common-line-height: (
+    lagre: 1.67,
+    medium: 1.75,
+    small: 1.71,
+);
+@mixin conmon() {
+    @each $size, $num in $heading-common-font {
+        $line-height: map-get($heading-common-line-height, $size);
+        .heading-#{$size} {
+            font-size: $num;
+            font-weight: 700;
+            line-height: $line-height;
+            color: #201830;
+        }
+    }
+    @each $size, $num in $button-desc-common-font {
+        $line-height: map-get($button-desc-common-line-height, $size);
+        .btn-#{$size} {
+            font-size: $num;
+            font-weight: 600;
+            line-height: $line-height;
+            color: #201830;
+        }
+    }
+    @each $size, $num in $button-desc-common-font {
+        $line-height: map-get($button-desc-common-line-height, $size);
+        .desc-#{$size} {
+            font-size: $num;
+            line-height: $line-height;
+            color: #201830;
+        }
+    }
+}
+@include conmon();
+
+:root {
+    --color-1: #fff8f3;
+    --color-2: #ff9051;
+    --color-3: #936cdd;
+}
+
+.btn {
+    min-width: 116px;
+    min-height: 48px;
+    height: 64px;
+    padding: 9px 29px;
+    color: #fff;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.67;
+    border-radius: 8px;
+    background: #936cdd;
+}
+// end common styles
+

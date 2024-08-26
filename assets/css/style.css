@@ -1,0 +1,115 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-size: inherit;
+  margin: 0;
+  outline: none;
+}
+
+a,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.6rem;
+  color: #201830;
+  margin: 0;
+  padding: 0;
+}
+
+.heading-lagre {
+  font-size: 7rem;
+  font-weight: 700;
+  line-height: 1.14;
+  color: #201830;
+}
+
+.heading-medium {
+  font-size: 4.2rem;
+  font-weight: 700;
+  line-height: 1.24;
+  color: #201830;
+}
+
+.heading-small {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #201830;
+}
+
+.btn-lagre {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.67;
+  color: #201830;
+}
+
+.btn-medium {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.75;
+  color: #201830;
+}
+
+.btn-small {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.71;
+  color: #201830;
+}
+
+.desc-lagre {
+  font-size: 1.8rem;
+  line-height: 1.67;
+  color: #201830;
+}
+
+.desc-medium {
+  font-size: 1.6rem;
+  line-height: 1.75;
+  color: #201830;
+}
+
+.desc-small {
+  font-size: 1.4rem;
+  line-height: 1.71;
+  color: #201830;
+}
+
+:root {
+  --color-1: #fff8f3;
+  --color-2: #ff9051;
+  --color-3: #936cdd;
+}
+
+.btn {
+  min-width: 116px;
+  min-height: 48px;
+  height: 64px;
+  padding: 9px 29px;
+  color: #fff;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.67;
+  border-radius: 8px;
+  background: #936cdd;
+}
+
+/*# sourceMappingURL=style.css.map */
