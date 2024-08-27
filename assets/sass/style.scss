@@ -56,7 +56,7 @@ $button-desc-common-line-height: (
     medium: 1.75,
     small: 1.71,
 );
-@mixin conmon() {
+@mixin common() {
     @each $size, $num in $heading-common-font {
         $line-height: map-get($heading-common-line-height, $size);
         .heading-#{$size} {
@@ -84,7 +84,7 @@ $button-desc-common-line-height: (
         }
     }
 }
-@include conmon();
+@include common();
 
 :root {
     --color-1: #fff8f3;
