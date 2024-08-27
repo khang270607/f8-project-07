@@ -4,6 +4,19 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.6rem;
+  color: #201830;
+  margin: 0;
+  padding: 0;
+  background: var(--color-1);
+}
+
 button,
 input,
 optgroup,
@@ -18,18 +31,12 @@ a,
 li {
   text-decoration: none;
   list-style: none;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 1.6rem;
   color: #201830;
-  margin: 0;
-  padding: 0;
+  transition: cursor 0.3s;
+}
+a:hover,
+li:hover {
+  cursor: pointer;
 }
 
 .heading-lagre {
@@ -96,9 +103,11 @@ body {
   --color-1: #fff8f3;
   --color-2: #ff9051;
   --color-3: #936cdd;
+  --text-color: #201830;
 }
 
 .btn {
+  display: inline-block;
   min-width: 116px;
   min-height: 48px;
   height: 64px;
@@ -109,7 +118,49 @@ body {
   font-weight: 600;
   line-height: 1.67;
   border-radius: 8px;
-  background: #936cdd;
+}
+
+.header {
+  padding-top: 42px;
+}
+
+.nav--row {
+  justify-content: space-between;
+  align-items: center;
+}
+.nav--list {
+  display: flex;
+  align-items: center;
+}
+.nav--item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav--link {
+  padding: 24px;
+  color: #665f73;
+  transition: text-shadow 0.2s;
+}
+.nav--link:hover {
+  text-shadow: 0px 0px 1px #665f73;
+}
+.nav--link__dropdow {
+  margin: 2px 0 0 -10px;
+}
+.nav--btn {
+  height: 48px;
+  transition: 0.25s;
+}
+.nav--btn:hover {
+  opacity: 0.8;
+}
+.nav--btn-login {
+  color: var(--text-color);
+}
+.nav--btn-signup {
+  border-radius: 6px;
+  background: var(--text-color);
 }
 
 /*# sourceMappingURL=style.css.map */
