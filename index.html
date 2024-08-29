@@ -10,10 +10,8 @@
             href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="assets/css/reset.css" />
-        <link rel="stylesheet" href="assets/css/gird.css" />
-        <link rel="stylesheet" href="assets/css/style.css" />
-        <link rel="stylesheet" href="assets/css/respensive.css" />
+        <link rel="stylesheet" href="./assets/css/main.css" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
     </head>
     <body>
         <header class="header">
@@ -22,22 +20,32 @@
                     <div class="row nav--row">
                         <article class="nav--item">
                             <a href="#" class="nav--logo">
-                                <img src="assets/img/Logo.svg" alt="logo" />
+                                <img src="assets/icon/Logo.svg" alt="logo" />
                             </a>
                         </article>
-                        <article class="nav--item">
-                            <ul class="nav--list">
-                                <li class="nav--item">
+                        <input
+                            type="checkbox"
+                            name=""
+                            id="show-menu"
+                            class="show-menu"
+                            hidden
+                        />
+                        <div class="nav--overlay">
+                            <label for="show-menu" class="nav--overlay__close"></label>
+                        </div>
+                        <article class="nav--item f-1 nav--menu">
+                            <ul class="nav--list f-1">
+                                <li>
                                     <a href="#!" class="nav--link desc-medium"
                                         >Episodes</a
                                     >
                                 </li>
-                                <li class="nav--item">
+                                <li>
                                     <a href="#!" class="nav--link desc-medium"
                                         >Trending</a
                                     >
                                 </li>
-                                <li class="nav--item">
+                                <li>
                                     <a href="#!" class="nav--link desc-medium"
                                         >Category</a
                                     >
@@ -47,29 +55,150 @@
                                         class="nav--link__dropdow"
                                     />
                                 </li>
-                                <li class="nav--item">
-                                    <a href="#!" class="nav--link desc-medium"
-                                        >Blog</a
+                                <li>
+                                    <a href="#!" class="nav--link desc-medium">Blog</a>
+                                </li>
+                                <div class="separate d-none d-lg-block"></div>
+                                <li>
+                                    <a
+                                        href="#!"
+                                        class="nav--link desc-medium d-none d-lg-block"
+                                        >Log in</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#!"
+                                        class="nav--link desc-medium d-none d-lg-block"
+                                        >Sign up</a
                                     >
                                 </li>
                             </ul>
-                        </article>
-                        <article class="nav--item">
                             <div class="nav--group-btn">
                                 <a
                                     href="#!"
-                                    class="nav--btn nav--btn-login btn-medium btn"
-                                    >Log in</a
+                                    class="nav--btn nav--btn-login btn-medium btn d-lg-none"
                                 >
+                                    Log in
+                                </a>
                                 <a
                                     href="#!"
-                                    class="nav--btn nav--btn-signup btn-medium btn"
-                                    >Sign up</a
+                                    class="nav--btn nav--btn-signup btn-medium btn d-lg-none"
                                 >
+                                    Sign up
+                                </a>
                             </div>
+                        </article>
+                        <article class="nav--item">
+                            <label for="show-menu">
+                                <img
+                                    src="./assets/icon/Menu.svg"
+                                    alt=""
+                                    class="nav-menu d-none d-lg-block"
+                                />
+                            </label>
                         </article>
                     </div>
                 </nav>
+                <div class="hero">
+                    <div class="row">
+                        <div class="hero-img">
+                            <div class="hero--item-left">
+                                <div class="hero--img__left">
+                                    <img
+                                        src="./assets/img/hero-person-1.png"
+                                        alt=""
+                                        class="hero--img"
+                                    />
+                                    <img
+                                        src="./assets/icon/playing.svg"
+                                        alt=""
+                                        class="hero--icon__playing"
+                                    />
+                                </div>
+                                <div class="hero--group-icon">
+                                    <h2 class="heading-small">Podcast listener</h2>
+                                    <div class="hero--list">
+                                        <img
+                                            src="./assets/icon/hero-person-icon-1.svg"
+                                            alt=""
+                                            class="hero--icon-person"
+                                        />
+                                        <img
+                                            src="./assets/icon/hero-person-icon-2.svg"
+                                            alt=""
+                                            class="hero--icon-person"
+                                        />
+                                        <img
+                                            src="./assets/icon/hero-person-icon-3.svg"
+                                            alt=""
+                                            class="hero--icon-person"
+                                        />
+                                        <span class="hero--icon-num">+50k</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hero--item-right">
+                                <div class="hero--icon-num__podcast">
+                                    <h3 class="hero--icon-num__heading">500+</h3>
+                                    <p class="hero--icon-num__desc">Podcasts</p>
+                                </div>
+                                <div class="hero--group--logo">
+                                    <img
+                                        src="./assets/icon/logo-songs-1.svg"
+                                        alt=""
+                                        class="hero--icon-logo"
+                                    />
+                                    <img
+                                        src="./assets/icon/logo-songs-2.svg"
+                                        alt=""
+                                        class="hero--icon-logo"
+                                    />
+                                    <img
+                                        src="./assets/icon/logo-songs-3.svg"
+                                        alt=""
+                                        class="hero--icon-logo"
+                                    />
+                                </div>
+                                <figure class="hero--img-right">
+                                    <img
+                                        src="./assets/img/hero-person-2.png"
+                                        alt=""
+                                        class="hero--img"
+                                    />
+                                    <div class="hero--blog">
+                                        <h3 class="desc-small hero--blog__heading">
+                                            Sarah Taylor
+                                        </h3>
+                                        <p class="hero--blog__desc">Song podcaster</p>
+                                    </div>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="hero-content">
+                            <h1 class="hero--heading heading-lagre">
+                                A new era of podcasting for you
+                            </h1>
+                            <p class="hero--desc desc-lagre">
+                                Rebuilt for simplicity and speed, so you can spend more
+                                time discovering and listening to great podcasts.
+                            </p>
+                            <div class="hero--group-btn">
+                                <a href="#!" class="btn btn-lagre hero--btn"
+                                    >Get Started</a
+                                >
+                                <button class="hero--btn-play btn-lagre">
+                                    Listen now
+                                    <img
+                                        src="./assets/icon/Play.svg"
+                                        alt=""
+                                        class="hero--icon-play"
+                                    />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
     </body>

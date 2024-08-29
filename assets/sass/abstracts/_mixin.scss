@@ -1,0 +1,91 @@
+$heading-common-font: (
+    lagre: 7rem,
+    medium: 4.2rem,
+    small: 2rem,
+);
+
+$heading-common-line-height: (
+    lagre: 1.14,
+    medium: 1.24,
+    small: 1.5,
+);
+$button-desc-common-font: (
+    lagre: 1.8rem,
+    medium: 1.6rem,
+    small: 1.4rem,
+);
+
+$button-desc-common-line-height: (
+    lagre: 1.67,
+    medium: 1.75,
+    small: 1.71,
+);
+@mixin common() {
+    @each $size, $num in $heading-common-font {
+        $line-height: map-get($heading-common-line-height, $size);
+        .heading-#{$size} {
+            font-size: $num;
+            font-weight: 700;
+            line-height: $line-height;
+            color: #201830;
+        }
+    }
+    @each $size, $num in $button-desc-common-font {
+        $line-height: map-get($button-desc-common-line-height, $size);
+        .btn-#{$size} {
+            font-size: $num;
+            font-weight: 600;
+            line-height: $line-height;
+            color: #201830;
+        }
+    }
+    @each $size, $num in $button-desc-common-font {
+        $line-height: map-get($button-desc-common-line-height, $size);
+        .desc-#{$size} {
+            font-size: $num;
+            font-weight: 600;
+            line-height: $line-height;
+            color: #201830;
+        }
+    }
+}
+
+@mixin flex(
+    $display: flex,
+    $justify: null,
+    $align: null,
+    $direction: null,
+    $wrap: null,
+    $grow: null
+) {
+    @if ($display != flex) {
+        display: $display;
+    } @else {
+        display: flex;
+    }
+    @if ($justify != null) {
+        justify-content: $justify;
+    }
+    @if ($align != null) {
+        align-items: $align;
+    }
+    @if ($direction != null) {
+        flex-direction: $direction;
+    }
+    @if ($wrap != null) {
+        flex-wrap: $wrap;
+    }
+    @if ($grow != null) {
+        flex-grow: $grow;
+    }
+}
+
+@mixin flexNum() {
+    @for $i from 1 through 12 {
+        .f-#{$i} {
+            flex: $i;
+        }
+    }
+}
+@include common();
+@include flexNum();

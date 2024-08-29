@@ -1,3 +1,5 @@
+@use "./abstracts/responsive";
+@use "./abstracts/mixin" as *;
 *,
 ::before,
 ::after {
@@ -15,6 +17,7 @@ body {
     margin: 0;
     padding: 0;
     background: var(--color-1);
+    height: 9999999px;
 }
 
 button,
@@ -25,6 +28,8 @@ textarea {
     font-size: inherit;
     margin: 0;
     outline: none;
+    border: none;
+    background: transparent;
 }
 
 a,
@@ -33,70 +38,25 @@ li {
     list-style: none;
     color: #201830;
     transition: cursor 0.3s;
+}
+
+a,
+button {
+    cursor: pointer;
+    transition: 0.25s;
     &:hover {
-        cursor: pointer;
+        opacity: 0.8;
     }
 }
 
 // common styles
-
-$heading-common-font: (
-    lagre: 7rem,
-    medium: 4.2rem,
-    small: 2rem,
-);
-
-$heading-common-line-height: (
-    lagre: 1.14,
-    medium: 1.24,
-    small: 1.5,
-);
-$button-desc-common-font: (
-    lagre: 1.8rem,
-    medium: 1.6rem,
-    small: 1.4rem,
-);
-
-$button-desc-common-line-height: (
-    lagre: 1.67,
-    medium: 1.75,
-    small: 1.71,
-);
-@mixin common() {
-    @each $size, $num in $heading-common-font {
-        $line-height: map-get($heading-common-line-height, $size);
-        .heading-#{$size} {
-            font-size: $num;
-            font-weight: 700;
-            line-height: $line-height;
-            color: #201830;
-        }
-    }
-    @each $size, $num in $button-desc-common-font {
-        $line-height: map-get($button-desc-common-line-height, $size);
-        .btn-#{$size} {
-            font-size: $num;
-            font-weight: 600;
-            line-height: $line-height;
-            color: #201830;
-        }
-    }
-    @each $size, $num in $button-desc-common-font {
-        $line-height: map-get($button-desc-common-line-height, $size);
-        .desc-#{$size} {
-            font-size: $num;
-            line-height: $line-height;
-            color: #201830;
-        }
-    }
-}
-@include common();
 
 :root {
     --color-1: #fff8f3;
     --color-2: #ff9051;
     --color-3: #936cdd;
     --text-color: #201830;
+    --text-color-gray: #665f73;
 }
 
 .btn {
@@ -112,6 +72,15 @@ $button-desc-common-line-height: (
     line-height: 1.67;
     border-radius: 8px;
 }
+
+.separate {
+    margin: 5px 0;
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    background: #ccc;
+}
+
 // end common styles
 
 .header {
@@ -120,28 +89,27 @@ $button-desc-common-line-height: (
 
 .nav {
     &--row {
-        justify-content: space-between;
-        align-items: center;
+        @include flex($justify: space-between, $align: center, $wrap: nowrap);
     }
 
     &--list {
-        display: flex;
-        align-items: center;
-        height: 48px;
+        @include flex($justify: center, $align: center);
     }
 
     &--item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex($justify: space-between, $align: center);
+    }
+
+    &--item:first-child {
+        margin-right: auto;
     }
 
     &--link {
-        padding: 24px;
-        color: #665f73;
+        padding: 10px 24px;
+        color: var(--text-color-gray);
         transition: text-shadow 0.2s;
         &:hover {
-            text-shadow: 0px 0px 1px #665f73;
+            text-shadow: 0px 0px 1px var(--text-color-gray);
         }
 
         &__dropdow {
@@ -164,5 +132,282 @@ $button-desc-common-line-height: (
     &--btn-signup {
         border-radius: 6px;
         background: var(--text-color);
+    }
+
+    @include responsive.screen(lg) {
+        &--menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            inset: 0 40% 0 0;
+            background: #fff;
+            z-index: 999;
+            transform: translateX(-100%);
+            transition: 0.3s;
+            overscroll-behavior: contain;
+            @include flex($justify: start, $align: start);
+            flex-direction: column;
+        }
+
+        &--list {
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+        }
+
+        &--link {
+            display: block;
+            width: 100%;
+
+            &__dropdow {
+                display: none;
+            }
+        }
+
+        &--overlay {
+            padding: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: 0;
+            display: none;
+            z-index: 998;
+            overscroll-behavior: contain;
+            transition: 0.3s;
+        }
+
+        &--overlay__close {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+        }
+
+        &--link {
+            padding: 10px 16px;
+        }
+
+        &--link__dropdow {
+            margin-left: 10px;
+        }
+    }
+
+    .show-menu:checked ~ .nav--menu {
+        transform: translateX(0);
+    }
+
+    .show-menu:checked ~ &--overlay {
+        display: block;
+        opacity: 0.3;
+    }
+}
+
+.hero {
+    margin-top: 120px;
+
+    &-img {
+        @include flex();
+        gap: 30px;
+    }
+
+    &--img__left {
+        position: relative;
+    }
+
+    &--group-icon {
+        margin-top: 53px;
+    }
+
+    &--list {
+        margin-top: 10px;
+        @include flex($justify: start, $align: center);
+        flex: 1;
+    }
+
+    &--icon-num {
+        @include flex($display: inline-flex, $justify: center, $align: center);
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        color: #fff;
+        background: #201830;
+        font-size: 1.2rem;
+        font-weight: 600;
+        line-height: 1.83;
+    }
+
+    &--icon-person,
+    &--icon-num {
+        margin-left: -12px;
+    }
+
+    &--icon-person:first-child {
+        margin-left: 0;
+    }
+
+    &--icon__playing {
+        position: absolute;
+        left: 0;
+        bottom: -84px;
+    }
+
+    &--icon-num__podcast {
+        position: relative;
+        margin: 8px 0 0 148px;
+        display: inline-block;
+        width: 82px;
+        height: 82px;
+        border-radius: 50%;
+        background: var(--color-2);
+        align-content: center;
+
+        &::before,
+        &::after {
+            content: url("../icon/hero-line.svg");
+            display: inline-block;
+            position: absolute;
+        }
+
+        &::before {
+            left: -64px;
+        }
+
+        &::after {
+            bottom: -47px;
+            left: 30px;
+        }
+    }
+
+    &--icon-num__heading {
+        color: #fff;
+        text-align: center;
+        font-size: 1.4rem;
+        font-weight: 800;
+        line-height: 1;
+    }
+
+    &--icon-num__desc {
+        margin-top: 4px;
+        color: #fff;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1;
+    }
+
+    &--group--logo {
+        @include flex($align: center);
+        gap: 18px;
+    }
+
+    &--img-right {
+        position: relative;
+        margin-top: 28px;
+    }
+
+    &--blog {
+        position: absolute;
+        left: 38px;
+        bottom: 16px;
+        width: 194px;
+        height: 60px;
+        border-radius: 9px;
+        background: rgba(255, 255, 255, 0.4);
+
+        box-shadow: 0px 12px 44px 0px rgba(0, 0, 0, 0.07);
+        backdrop-filter: blur(5px);
+        @include flex($direction: column, $justify: center, $align: center);
+    }
+
+    &--blog__heading {
+        margin-bottom: 6px;
+        color: #201830;
+        text-align: center;
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    &--blog__desc {
+        color: var(--text-color-gray);
+        font-size: 1.2rem;
+        line-height: 1;
+    }
+
+    &-content {
+        margin-left: 130px;
+    }
+
+    &--heading {
+        position: relative;
+        width: 470px;
+        z-index: 2;
+        &::before {
+            content: url("../icon/curve.svg");
+            position: absolute;
+            left: 35px;
+            bottom: 54px;
+            z-index: -1;
+        }
+    }
+
+    &--desc {
+        margin-top: 8px;
+        width: 470px;
+        color: var(--text-color-gray);
+        font-weight: 400;
+    }
+
+    &--group-btn {
+        margin-top: 40px;
+        @include flex($align: center);
+        gap: 38px;
+    }
+
+    &--btn {
+        padding: 17px 27px;
+        border-radius: 8px;
+        background: #936cdd;
+    }
+
+    &--btn-play {
+        @include flex($align: center);
+        gap: 8px;
+        padding: 17px 27px;
+    }
+
+    @include responsive.screen(xxl) {
+        &-content {
+            margin-left: auto;
+        }
+    }
+
+    @include responsive.screen(xl) {
+        &--img {
+            width: 200px;
+        }
+
+        &--blog {
+            left: 3px;
+        }
+
+        &--icon-num__podcast {
+            margin-left: 115px;
+        }
+
+        &--icon__playing {
+            left: -41px;
+        }
+
+        &--heading {
+            font-size: 6.6rem;
+            &::before {
+                left: 33px;
+                bottom: 47px;
+            }
+        }
     }
 }
