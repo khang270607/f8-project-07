@@ -1,34 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="282" height="148" viewBox="0 0 282 148" fill="none">
-  <g filter="url(#filter0_d_2_231)">
-    <rect x="44" y="32" width="194" height="60" rx="9" fill="white"/>
-  </g>
-  <rect x="103" y="59" width="2" height="6" rx="1" fill="#201830"/>
-  <rect x="135" y="59" width="2" height="6" rx="1" fill="#201830"/>
-  <rect x="175" y="59" width="2" height="6" rx="1" fill="#A4A0AB"/>
-  <rect x="143" y="59" width="2" height="6" rx="1" fill="#201830"/>
-  <rect x="183" y="59" width="2" height="6" rx="1" fill="#A4A0AB"/>
-  <rect x="215" y="59" width="2" height="6" rx="1" fill="#A4A0AB"/>
-  <rect x="111" y="54" width="2" height="16" rx="1" fill="#201830"/>
-  <rect x="127" y="54" width="2" height="16" rx="1" fill="#201830"/>
-  <rect x="167" y="54" width="2" height="16" rx="1" fill="#A4A0AB"/>
-  <rect x="207" y="54" width="2" height="16" rx="1" fill="#A4A0AB"/>
-  <rect x="151" y="54" width="2" height="16" rx="1" fill="#201830"/>
-  <rect x="191" y="54" width="2" height="16" rx="1" fill="#A4A0AB"/>
-  <rect x="119" y="49" width="2" height="26" rx="1" fill="#201830"/>
-  <rect x="159" y="49" width="2" height="26" rx="1" fill="#A4A0AB"/>
-  <rect x="199" y="49" width="2" height="26" rx="1" fill="#A4A0AB"/>
-  <circle cx="78" cy="62" r="12.5" stroke="#936CDD"/>
-  <path d="M81.85 61.9134C81.9167 61.9519 81.9167 62.0481 81.85 62.0866L76.15 65.3775C76.0833 65.416 76 65.3679 76 65.2909V58.7091C76 58.6321 76.0833 58.584 76.15 58.6225L81.85 61.9134Z" fill="#936CDD"/>
-  <defs>
-    <filter id="filter0_d_2_231" x="0" y="0" width="282" height="148" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-      <feOffset dy="12"/>
-      <feGaussianBlur stdDeviation="22"/>
-      <feComposite in2="hardAlpha" operator="out"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 0.12549 0 0 0 0 0.0941176 0 0 0 0 0.188235 0 0 0 0.07 0"/>
-      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_231"/>
-      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_231" result="shape"/>
-    </filter>
-  </defs>
+<svg width="282" height="148" viewBox="0 0 282 148" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 10">
+<g id="Base" filter="url(#filter0_d_2_231)">
+<rect x="44" y="32" width="194" height="60" rx="9" fill="white"/>
+</g>
+<g id="Group 7">
+<rect id="Rectangle 12" x="103" y="59" width="2" height="6" rx="1" fill="#201830"/>
+<rect id="Rectangle 16" x="135" y="59" width="2" height="6" rx="1" fill="#201830"/>
+<rect id="Rectangle 21" x="175" y="59" width="2" height="6" rx="1" fill="#A4A0AB"/>
+<rect id="Rectangle 17" x="143" y="59" width="2" height="6" rx="1" fill="#201830"/>
+<rect id="Rectangle 22" x="183" y="59" width="2" height="6" rx="1" fill="#A4A0AB"/>
+<rect id="Rectangle 26" x="215" y="59" width="2" height="6" rx="1" fill="#A4A0AB"/>
+<rect id="Rectangle 13" x="111" y="54" width="2" height="16" rx="1" fill="#201830"/>
+<rect id="Rectangle 15" x="127" y="54" width="2" height="16" rx="1" fill="#201830"/>
+<rect id="Rectangle 19" x="167" y="54" width="2" height="16" rx="1" fill="#A4A0AB"/>
+<rect id="Rectangle 23" x="207" y="54" width="2" height="16" rx="1" fill="#A4A0AB"/>
+<rect id="Rectangle 18" x="151" y="54" width="2" height="16" rx="1" fill="#201830"/>
+<rect id="Rectangle 24" x="191" y="54" width="2" height="16" rx="1" fill="#A4A0AB"/>
+<rect id="Rectangle 14" x="119" y="49" width="2" height="26" rx="1" fill="#201830"/>
+<rect id="Rectangle 20" x="159" y="49" width="2" height="26" rx="1" fill="#A4A0AB"/>
+<rect id="Rectangle 25" x="199" y="49" width="2" height="26" rx="1" fill="#A4A0AB"/>
+</g>
+<g id="Group 5">
+<circle id="Ellipse 14" cx="78" cy="62" r="12.5" stroke="#936CDD"/>
+<path id="Polygon 2" d="M81.85 61.9134C81.9167 61.9519 81.9167 62.0481 81.85 62.0866L76.15 65.3775C76.0833 65.416 76 65.3679 76 65.2909V58.7091C76 58.6321 76.0833 58.584 76.15 58.6225L81.85 61.9134Z" fill="#936CDD"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_2_231" x="0" y="0" width="282" height="148" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="12"/>
+<feGaussianBlur stdDeviation="22"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.12549 0 0 0 0 0.0941176 0 0 0 0 0.188235 0 0 0 0.07 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_231"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_231" result="shape"/>
+</filter>
+</defs>
 </svg>

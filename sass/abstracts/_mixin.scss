@@ -43,7 +43,7 @@ $button-desc-common-line-height: (
         $line-height: map-get($button-desc-common-line-height, $size);
         .desc-#{$size} {
             font-size: $num;
-            font-weight: 600;
+            font-weight: 400;
             line-height: $line-height;
             color: #201830;
         }

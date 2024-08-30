@@ -81,10 +81,42 @@ button {
     background: #ccc;
 }
 
+.heading--position,
+.heading--position__small {
+    position: relative;
+    display: inline-block;
+    &::before {
+        content: url(../icon/curve.svg);
+        position: absolute;
+        left: 9%;
+        bottom: -31%;
+        z-index: -1;
+    }
+}
+
+.heading--position__small {
+    display: inline-flex;
+    z-index: 1;
+    &::before {
+        content: url(../icon/curve-small.svg);
+        left: -3%;
+    }
+}
+
+@include responsive.screen(sm) {
+    .heading--position,
+    .heading--position__small {
+        &::before {
+            left: -3%;
+            scale: 0.8;
+        }
+    }
+}
+
 // end common styles
 
 .header {
-    padding-top: 42px;
+    padding: 42px 0 158px;
 }
 
 .nav {
@@ -132,6 +164,15 @@ button {
     &--btn-signup {
         border-radius: 6px;
         background: var(--text-color);
+    }
+
+    .show-menu:checked ~ .nav--menu {
+        transform: translateX(0);
+    }
+
+    .show-menu:checked ~ &--overlay {
+        display: block;
+        opacity: 0.3;
     }
 
     @include responsive.screen(lg) {
@@ -193,15 +234,6 @@ button {
             margin-left: 10px;
         }
     }
-
-    .show-menu:checked ~ .nav--menu {
-        transform: translateX(0);
-    }
-
-    .show-menu:checked ~ &--overlay {
-        display: block;
-        opacity: 0.3;
-    }
 }
 
 .hero {
@@ -250,14 +282,15 @@ button {
 
     &--icon__playing {
         position: absolute;
-        left: 0;
+        left: 50%;
+        translate: -50% 0;
         bottom: -84px;
     }
 
     &--icon-num__podcast {
         position: relative;
-        margin: 8px 0 0 148px;
-        display: inline-block;
+        display: block;
+        margin: 0 70px 0 auto;
         width: 82px;
         height: 82px;
         border-radius: 50%;
@@ -310,7 +343,8 @@ button {
 
     &--blog {
         position: absolute;
-        left: 38px;
+        left: 50%;
+        translate: -50% 0;
         bottom: 16px;
         width: 194px;
         height: 60px;
@@ -345,17 +379,10 @@ button {
         position: relative;
         width: 470px;
         z-index: 2;
-        &::before {
-            content: url("../icon/curve.svg");
-            position: absolute;
-            left: 35px;
-            bottom: 54px;
-            z-index: -1;
-        }
     }
 
     &--desc {
-        margin-top: 8px;
+        margin-top: 20px;
         width: 470px;
         color: var(--text-color-gray);
         font-weight: 400;
@@ -386,28 +413,172 @@ button {
     }
 
     @include responsive.screen(xl) {
+        & {
+            margin-top: 50px;
+        }
         &--img {
             width: 200px;
         }
 
-        &--blog {
-            left: 3px;
-        }
-
         &--icon-num__podcast {
-            margin-left: 115px;
-        }
-
-        &--icon__playing {
-            left: -41px;
+            margin-right: 0;
         }
 
         &--heading {
             font-size: 6.6rem;
+        }
+    }
+    @include responsive.screen(lg) {
+        &--img {
+            width: 330px;
+        }
+        &--icon-num__podcast {
+            margin-right: 70px;
+        }
+        &-content {
+            margin: 50px 0 0;
+        }
+        &--heading {
+            width: 100%;
+        }
+
+        &--desc {
+            width: 100%;
+        }
+
+        &--blog {
+            width: calc(100% - 20px);
+        }
+    }
+
+    @include responsive.screen(md) {
+        &--img {
+            width: 100%;
+        }
+        &--icon-num__podcast {
+            margin-right: 0;
+        }
+        &--heading {
+            font-size: 5.2rem;
+        }
+    }
+
+    @include responsive.screen(sm) {
+        .heading__position {
             &::before {
-                left: 33px;
-                bottom: 47px;
+                left: -3%;
+                scale: 0.8;
             }
         }
+
+        &--icon__playing {
+            scale: 0.7;
+        }
+
+        &--icon-num__podcast {
+            margin-top: 0;
+            scale: 0.9;
+        }
+
+        &--group--logo {
+            margin-top: 8px;
+            gap: 10px;
+        }
+
+        &--img-right {
+            margin-top: 16px;
+        }
+
+        &--group-btn {
+            gap: 18px;
+        }
+
+        &--btn-play {
+            padding: 17px;
+        }
+
+        &--group-icon {
+            margin-top: 45px;
+        }
+    }
+}
+
+.propose {
+    background: #fff;
+    padding: 205px 0 160px;
+    &--row {
+        align-items: center;
+        height: 399px;
+    }
+    &--heading {
+        width: 470px;
+    }
+
+    &--desc {
+        margin-top: 18px;
+        width: 470px;
+        color: var(--text-color-gray);
+    }
+
+    &--btn {
+        margin-top: 38px;
+        padding: 17px 45px 17px 19px;
+        position: relative;
+        border-radius: 8px;
+        background: #936cdd;
+    }
+
+    &--icon-play {
+        position: absolute;
+        top: 50%;
+        right: 19px;
+        translate: 0 -50%;
+    }
+
+    &--img {
+        margin-left: auto;
+        position: relative;
+        width: 570px;
+        height: 100%;
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            content: "";
+            display: inline-block;
+            width: 287px;
+            height: 287px;
+            border-radius: 50%;
+            opacity: 0.4;
+            background: #ff9051;
+            filter: blur(129px);
+        }
+    }
+
+    &--item {
+        position: absolute;
+    }
+
+    &--item:nth-child(1) {
+        top: 48%;
+        left: 0;
+        translate: 0 -48%;
+    }
+    &--item:nth-child(2) {
+        top: 0;
+        left: 185px;
+    }
+    &--item:nth-child(3) {
+        bottom: 0;
+        left: 169px;
+    }
+    &--item:nth-child(4) {
+        top: 59px;
+        right: 0;
+    }
+    &--item:nth-child(5) {
+        bottom: 40px;
+        right: 48px;
     }
 }
